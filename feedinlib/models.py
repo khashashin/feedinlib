@@ -504,9 +504,9 @@ class Pvlib(PhotovoltaicModelBase):
         mc.run_model(weather=weather)
 
         if self.mode == "ac":
-            return mc.ac
+            return mc.results.ac
         elif self.mode == "dc":
-            return mc.dc.p_mp
+            return mc.results.dc.p_mp
         else:
             raise ValueError(
                 "{} is not a valid `mode`. `mode` must "
